@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="Assembly Source File">
+<includepath>/home/quynhpp/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178/examples/boards/dk-tm4c123g</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178</includepath>
+
+</language>
+<language name="C Source File">
+<includepath>/home/quynhpp/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178/examples/boards/dk-tm4c123g</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178</includepath>
+
+</language>
+<language name="C++ Source File">
+<includepath>/home/quynhpp/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178/examples/boards/dk-tm4c123g</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178</includepath>
+
+</language>
+<language name="Assembly Source File">
+<includepath>/home/quynhpp/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178/examples/boards/dk-tm4c123g</includepath>
+<includepath>/home/quynhpp/ti/tivaware_c_series_2_1_4_178</includepath>
+
+</language>
+<language name="Linker Command File">
+
+</language>
+<language name="Linker Command File">
+
+</language>
+<language name="Linker Command File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="Assembly Source File">
+<macro>
+<name>ccs</name><value>"ccs"</value>
+</macro>
+<macro>
+<name>PART_TM4C123GH6PGE</name><value/>
+</macro>
+<macro>
+<name>TARGET_IS_TM4C123_RB1</name><value/>
+</macro>
+<macro>
+<name>UART_BUFFERED</name><value/>
+</macro>
+
+</language>
+<language name="C Source File">
+<macro>
+<name>ccs</name><value>"ccs"</value>
+</macro>
+<macro>
+<name>PART_TM4C123GH6PGE</name><value/>
+</macro>
+<macro>
+<name>TARGET_IS_TM4C123_RB1</name><value/>
+</macro>
+<macro>
+<name>UART_BUFFERED</name><value/>
+</macro>
+
+</language>
+<language name="C++ Source File">
+<macro>
+<name>ccs</name><value>"ccs"</value>
+</macro>
+<macro>
+<name>PART_TM4C123GH6PGE</name><value/>
+</macro>
+<macro>
+<name>TARGET_IS_TM4C123_RB1</name><value/>
+</macro>
+<macro>
+<name>UART_BUFFERED</name><value/>
+</macro>
+
+</language>
+<language name="Assembly Source File">
+<macro>
+<name>ccs</name><value>"ccs"</value>
+</macro>
+<macro>
+<name>PART_TM4C123GH6PGE</name><value/>
+</macro>
+<macro>
+<name>TARGET_IS_TM4C123_RB1</name><value/>
+</macro>
+<macro>
+<name>UART_BUFFERED</name><value/>
+</macro>
+
+</language>
+<language name="Linker Command File">
+
+</language>
+<language name="Linker Command File">
+
+</language>
+<language name="Linker Command File">
+
+</language>
+</section>
+</cdtprojectproperties>
