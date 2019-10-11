@@ -75,9 +75,7 @@ __error__(char *pcFilename, uint32_t ui32Line)
 void
 SysTickIntHandler(void)
 {
-    //
     // Update our system tick counter.
-    //
     g_ui32SysTickCount++;
 }
 
@@ -90,33 +88,21 @@ SysTickIntHandler(void)
 void
 ConfigureUART(void)
 {
-    //
     // Enable the GPIO Peripheral used by the UART.
-    //
     ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 
-    //
     // Enable UART0
-    //
     ROM_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 
-    //
     // Configure GPIO Pins for UART mode.
-    //
     ROM_GPIOPinConfigure(GPIO_PA0_U0RX);
     ROM_GPIOPinConfigure(GPIO_PA1_U0TX);
     ROM_GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 
-    //
     // Use the internal 16MHz oscillator as the UART clock source.
-    //
     UARTClockSourceSet(UART0_BASE, UART_CLOCK_PIOSC);
 
-    //
     // Initialize the UART for console I/O.
-    //
-    UARTStdioConfig(0, 115200, 16000000);
-    //
     UARTStdioConfig(0, 115200, 16000000);
 }
 #endif
@@ -126,33 +112,27 @@ ConfigureUART(void)
  */
 int main(void)
 {
-    //
     // Enable lazy stacking for interrupt handlers.  This allows floating-point
     // instructions to be used within interrupt handlers, but at the expense of
     // extra stack usage.
-    //
-//    ROM_FPULazyStackingEnable();
+    ROM_FPULazyStackingEnable();
 
-    //
     // Set the clocking to run from the PLL at 50MHz
-    //
-//    ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
-//                       SYSCTL_XTAL_16MHZ);
+    ROM_SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |
+                      SYSCTL_XTAL_16MHZ);
 
 #ifdef DEBUG
-    //
     // Configure the UART for debug output.
-    //
     ConfigureUART();
 #endif
 
     // Enable the system tick.
-//    ROM_SysTickPeriodSet(ROM_SysCtlClockGet() / SYSTICKS_PER_SECOND);
-//    ROM_SysTickIntEnable();
-//    ROM_SysTickEnable();
-
-//    DEBUG_PRINT("\nTiva C Series USB bulk device example\n");
-//    DEBUG_PRINT("---------------------------------\n\n");
+    ROM_SysTickPeriodSet(ROM_SysCtlClockGet() / SYSTICKS_PER_SECOND);
+    ROM_SysTickIntEnable();
+    ROM_SysTickEnable();
+    
+    DEBUG_PRINT("\nTiva C Series USB bulk device example\n");
+    DEBUG_PRINT("---------------------------------\n\n");
 
     while(1) {}
 }
