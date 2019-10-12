@@ -24,6 +24,7 @@
 #include "utils.h"
 #include "device_status.h"
 #include "usb_implementation.h"
+#include <stdio.h>
 
 // The system tick rate expressed both as ticks per second and a millisecond period.
 #define SYSTICKS_PER_SECOND 100
@@ -38,11 +39,42 @@ void SysTickIntHandler(void) {
     g_ui32SysTickCount++;
 }
 
+// Receiving handler for USB
 uint32_t USBTxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void *pvMsgData) {
+    sprintf(g_pcStatus, "Tx Event: %d\n", ui32Event);
+    g_ui32StatusFlags |= STATUS_UPDATE;
     return(0);
 }
 
+// Reading handler for USB
 uint32_t USBRxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void *pvMsgData) {
+    // which event from host?
+    switch (ui32Event){
+    // host connected.
+    case USB_EVENT_CONNECTED: {
+        memset(g_pcStatus, 0, sizeof(g_pcStatus));
+        strcpy(g_pcStatus, "Connected\n");
+        g_ui32StatusFlags |= STATUS_UPDATE;
+    }
+    break;
+    // host disconnect.
+    case USB_EVENT_DISCONNECTED: {
+        memset(g_pcStatus, 0, sizeof(g_pcStatus));
+        strcpy(g_pcStatus, "Disconnected\n");
+        g_ui32StatusFlags |= STATUS_UPDATE;
+    }
+    break;
+    // host send data.
+    case USB_EVENT_RX_AVAILABLE: {
+        // TODO: read data.
+    }
+    break;
+    case USB_EVENT_SUSPEND:
+    case USB_EVENT_RESUME:
+    break;
+    default:
+        break;
+    }
     return(0);
 }
 
