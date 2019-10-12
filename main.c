@@ -147,8 +147,8 @@ int main(void)
 
     // Init USB bulk device.
     USBBufferInit(&g_sTxBuffer);
-    // USBBufferInit(&g_sRxBuffer);
-    // USBDBulkInit(0, &g_sBulkDevice);
+    USBBufferInit(&g_sRxBuffer);
+    USBDBulkInit(0, &g_sBulkDevice);
 
     while(1) {}
 }
