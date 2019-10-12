@@ -105,10 +105,3 @@ tUSBBuffer g_sTxBuffer = {
     .pui8Buffer         = g_pui8USBTxBuffer,
     .ui32BufferSize     = BULK_BUFFER_SIZE
 };
-
-extern uint32_t RxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void* pvMsgData) {
-    
-}
-extern uint32_t TxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void* pvMsgData) {
-
-}

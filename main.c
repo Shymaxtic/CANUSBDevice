@@ -21,6 +21,7 @@
 #include "utils/uartstdio.h"
 #include "utils/ustdlib.h"
 #include <string.h>
+#include "usb_can_structs.h"
 
 #define DEBUG
 //*****************************************************************************
@@ -107,6 +108,16 @@ ConfigureUART(void)
 }
 #endif
 
+
+uint32_t TxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void *pvMsgData) {
+    return(0);
+}
+
+uint32_t RxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue, void *pvMsgData) {
+    return(0);
+}
+
+
 /**
  * main.c
  */
@@ -133,6 +144,11 @@ int main(void)
     
     DEBUG_PRINT("\nTiva C Series USB bulk device example\n");
     DEBUG_PRINT("---------------------------------\n\n");
+
+    // Init USB bulk device.
+    USBBufferInit(&g_sTxBuffer);
+    // USBBufferInit(&g_sRxBuffer);
+    // USBDBulkInit(0, &g_sBulkDevice);
 
     while(1) {}
 }

@@ -19,5 +19,5 @@ extern tUSBBuffer g_sTxBuffer;
 extern tUSBBuffer g_sRxBuffer;
 extern uint8_t g_pui8USBTxBuffer[];
 extern uint8_t g_pui8USBRxBuffer[];
-extern tUSBDBulkDevice gsBulkDevice;
+extern tUSBDBulkDevice g_sBulkDevice;
 #endif
