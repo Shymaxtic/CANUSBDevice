@@ -5,8 +5,8 @@
  *      Author: quynhpp
  */
 
-#ifndef USB_CAN_DATA_H_
-#define USB_CAN_DATA_H_
+#ifndef USB_DATA_H_
+#define USB_DATA_H_
 
 
 #define D_USB_PACKET_MAX_LEN        64  // equal sizeof endpoint
@@ -23,18 +23,18 @@ typedef enum {
  | Frame num  (1 byte) |[| ID (4 bytes) | info (1 byte) | data (8 bytes) |...]
 */
 typedef struct {
-    uint32_t     u32id;
-    uint8_t      u8info;
-    uint8_t      au8data[8];
+    uint32_t     ui32id;
+    uint8_t      ui8info;
+    uint8_t      aui8data[8];
 } __attribute__ ((packed)) usb_can_frame_info_t;
 
 #define D_USB_PACKET_DATA_LEN       (D_USB_PACKET_MAX_LEN - sizeof(uint8_t))
 
-// data packet for my usb. maximum is equal 64 byte endpoint of TM4C123GH6PGE
+// data packet for my usb. maximum is equal 64 byte end point of TM4C123GH6PGE
 typedef struct usb_can_packet_t {
-    uint8_t u8type;
-    uint8_t au8data[D_USB_PACKET_DATA_LEN];
+    uint8_t ui8type;
+    uint8_t aui8data[D_USB_PACKET_DATA_LEN];
 }   __attribute__ ((packed)) usb_can_packet_t;
 
 
-#endif /* USB_CAN_DATA_H_ */
+#endif /* USB_DATA_H_ */

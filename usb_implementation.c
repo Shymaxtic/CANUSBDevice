@@ -1,4 +1,4 @@
-#include "usb_can_structs.h"
+#include "usb_implementation.h"
 #include "usblib/usblib.h"
 #include "usblib/usb-ids.h"
 
@@ -84,7 +84,7 @@ tUSBDBulkDevice g_sBulkDevice = {
 uint8_t g_pui8USBRxBuffer[BULK_BUFFER_SIZE];
 tUSBBuffer g_sRxBuffer = {
     .bTransmitBuffer    = false,
-    .pfnCallback        = RxHandler,
+    .pfnCallback        = USBRxHandler,
     .pvCBData           = (void *)&g_sBulkDevice,
     .pfnTransfer        = USBDBulkPacketRead,
     .pfnAvailable       = USBDBulkRxPacketAvailable,
@@ -97,7 +97,7 @@ tUSBBuffer g_sRxBuffer = {
 uint8_t g_pui8USBTxBuffer[BULK_BUFFER_SIZE];
 tUSBBuffer g_sTxBuffer = {
     .bTransmitBuffer    = true,
-    .pfnCallback        = TxHandler,
+    .pfnCallback        = USBTxHandler,
     .pvCBData           = (void *)&g_sBulkDevice,
     .pfnTransfer        = USBDBulkPacketWrite,
     .pfnAvailable       = USBDBulkTxPacketAvailable,
